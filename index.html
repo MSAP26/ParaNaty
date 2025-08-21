@@ -61,7 +61,6 @@
         }
 
         /* En móvil las imágenes bajan */
-        /* Responsive mejorado */
         @media (max-width: 720px) {
             .hero-inner {
                 grid-template-columns: 1fr;
@@ -332,9 +331,10 @@
                     importante…</p>
             </div>
             <figure class="sticker" aria-label="Stitch y Rapunzel">
-                <img id="imgStitch" src="" alt="Stitch" />
-                <img id="imgRapunzel" src="" alt="Rapunzel" />
+                <img id="imgStitch" src="resources/Stitch.png" alt="Stitch" />
+                <img id="imgRapunzel" src="resources/Pascal.png" alt="Rapunzel" />
             </figure>
+
         </div>
         <div id="hearts"></div>
     </header>
@@ -374,10 +374,6 @@ Contigo encontré una motivación para de verdad mejorar algunas aspectos en mi 
         // helpers
         const $ = (q) => document.querySelector(q);
         const el = (tag, cls) => { const n = document.createElement(tag); if (cls) n.className = cls; return n; };
-
-        // imágenes
-        $('#imgStitch').src = CONFIG.images.stitch;
-        $('#imgRapunzel').src = CONFIG.images.rapunzel;
 
         // corazones
         const hearts = document.getElementById('hearts');
