@@ -61,11 +61,38 @@
         }
 
         /* En móvil las imágenes bajan */
-        @media (max-width:720px) {
+        /* Responsive mejorado */
+        @media (max-width: 720px) {
             .hero-inner {
                 grid-template-columns: 1fr;
+                /* ya lo tenías */
+                gap: 16px;
+            }
+
+            /* La grilla de imágenes pasa a 1 columna para que no se encojan */
+            .sticker {
+                grid-template-columns: 1fr;
+                transform: none;
+                /* evita que se recorte por overflow */
+                padding: 14px;
+            }
+
+            /* Evita recortes visuales en el header */
+            header.hero {
+                overflow: visible;
+                /* en móvil deja respirar la tarjeta */
+                padding: 22px;
+            }
+
+            /* Ajustes visuales de las imágenes */
+            .sticker img {
+                aspect-ratio: auto;
+                /* deja alto natural si hace falta */
+                height: auto;
+                max-width: 100%;
             }
         }
+
 
         .hero h1 {
             font-size: clamp(28px, 6vw, 52px);
@@ -286,11 +313,11 @@
     <script>
         const CONFIG = {
             notify: {
-                whatsapp: { phone: "593995220022" } 
+                whatsapp: { phone: "593995220022" }
             },
             images: {
-                stitch: "../resources/Stitch.png",
-                rapunzel: "../resources/Pascal.png"
+                stitch: "resources/Stitch.png",
+                rapunzel: "resources/Pascal.png"
             },
             playfulNoTexts: ["¿Segura que no? 😳", "Piensa en nuestras llamadas… ❤️", "Uy, ese botón se mueve 👀", "Ok, pero mira estos ojitos 🥺", "Ya no juego… (sí juego) 😝"]
         };
@@ -300,7 +327,8 @@
         <div class="hero-inner">
             <div>
                 <h1>Una carta para ti✨</h1>
-                <p>Te hice un pequeño recorrido con mensajes que necesitaba expresarlos que aparecen paso a paso jiji. Al final hay una preguntita
+                <p>Te hice un pequeño recorrido con mensajes que necesitaba expresarlos que aparecen paso a paso jiji.
+                    Al final hay una preguntita
                     importante…</p>
             </div>
             <figure class="sticker" aria-label="Stitch y Rapunzel">
